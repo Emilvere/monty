@@ -11,21 +11,21 @@
 int execute(char *content, stack_t **stack, unsigned int counts, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", func_push}, {"pall", func_pall}, {"pint", func_pint},
-				{"pop", func_pop},
-				{"swap", func_swap},
-				{"add", func_add},
-				{"nop", func_nop},
-				{"sub", func_sub},
-				{"div", func_div},
-				{"mul", func_mul},
-				{"mod", func_mod},
-				{"pchar", func_pchar},
-				{"pstr", func_pstr},
-				{"rotl", func_rotl},
-				{"rotr", func_rotr},
-				{"queue", func_queue},
-				{"stack", func_stack},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -38,7 +38,7 @@ int execute(char *content, stack_t **stack, unsigned int counts, FILE *file)
 	while (opst[i].opcode && optn)
 	{
 		if (strcmp(optn, opst[i].opcode) == 0)
-		{	opst[i].func(stack, counts);
+		{	opst[i].f(stack, counts);
 			return (0);
 		}
 		i++;

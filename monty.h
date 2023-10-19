@@ -41,7 +41,7 @@ extern bus_t bus;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
- * @func: function to handle the opcode
+ * @f: function to handle the opcode
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
@@ -49,30 +49,30 @@ extern bus_t bus;
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*func)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void func_push(stack_t **head, unsigned int number);
-void func_pall(stack_t **head, unsigned int number);
-void func_pint(stack_t **head, unsigned int number);
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
 int execute(char *content, stack_t **head, unsigned int counts, FILE *file);
 void free_stack(stack_t *head);
-void func_pop(stack_t **head, unsigned int counts);
-void func_swap(stack_t **head, unsigned int counts);
-void func_add(stack_t **head, unsigned int counts);
-void func_nop(stack_t **head, unsigned int counts);
-void func_sub(stack_t **head, unsigned int counts);
-void func_div(stack_t **head, unsigned int counts);
-void func_mul(stack_t **head, unsigned int counts);
-void func_mod(stack_t **head, unsigned int counts);
-void func_pchar(stack_t **head, unsigned int counts);
-void func_pstr(stack_t **head, unsigned int counts);
-void func_rotl(stack_t **head, unsigned int counts);
-void func_rotr(stack_t **head, __attribute__((unused)) unsigned int counts);
+void f_pop(stack_t **head, unsigned int counts);
+void f_swap(stack_t **head, unsigned int counts);
+void f_add(stack_t **head, unsigned int counts);
+void f_nop(stack_t **head, unsigned int counts);
+void f_sub(stack_t **head, unsigned int counts);
+void f_div(stack_t **head, unsigned int counts);
+void f_mul(stack_t **head, unsigned int counts);
+void f_mod(stack_t **head, unsigned int counts);
+void f_pchar(stack_t **head, unsigned int counts);
+void f_pstr(stack_t **head, unsigned int counts);
+void f_rotl(stack_t **head, unsigned int counts);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counts);
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
-void func_queue(stack_t **head, unsigned int counts);
-void func_stack(stack_t **head, unsigned int counts);
+void f_queue(stack_t **head, unsigned int counts);
+void f_stack(stack_t **head, unsigned int counts);
 #endif

@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * func_mod - puts the rest of the division of the second
+ * f_mod - puts the rest of the division of the second
  * top element of the stack by the top element of the stack
  * @head: stack head
  * @counts: line_number
  * Return: none
 */
-void func_mod(stack_t **head, unsigned int counts)
+void f_mod(stack_t **head, unsigned int counts)
 {
 	stack_t *hd;
 	int len = 0, aux;

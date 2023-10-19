@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	FILE *file;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-	unsigned int counter = 0;
+	unsigned int counts = 0;
 
 	if (argc != 2)
 	{
@@ -31,10 +31,10 @@ int main(int argc, char *argv[])
 		content = NULL;
 		read_line = 1;
 		bus.content = content;
-		counter++;
+		counts++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute(content, &stack, counts, file);
 		}
 		free(content);
 	}
